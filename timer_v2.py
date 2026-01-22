@@ -1,9 +1,9 @@
 import time
-
+# Default display timer tobe choosen from
 def parse_input(user_input):
     """
     Handles formats:
-    '1:30' -> 90 seconds
+    '1:20' -> 80 seconds
     '2'    -> 2 seconds (default)
     '2m'   -> 120 seconds
     """
@@ -38,7 +38,7 @@ def countdown(seconds):
 
 def main():
     while True:
-        inp = input("\nEnter time (e.g., '1:30', '90', '2m') or 'q': ")
+        inp = input("\nEnter time (e.g., '1:20', '80', '2m') or 'q': ")
         if inp.lower() == 'q': break
         
         try:
