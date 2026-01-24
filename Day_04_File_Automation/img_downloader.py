@@ -1,41 +1,63 @@
-import requests
+import yt_dlp
 import os
 
-def download_images(url_list, save_folder):
-    if not os.path.exists(save_folder):
-        os.makedirs(save_folder)
+def download_video(url, save_path):
+    # Ensure save directory exists
+    if not os.path.exists(save_path):
+        os.makedirs(save_path)
 
-    for i, url in enumerate(url_list, start=1):
-        try:
-            print(f"Downloading {i}/{len(url_list)}: {url}...")
-            response = requests.get(url)
+    # Configuration for yt-dlp
+    ydl_opts = {
+        # Save file as: "Folder/VideoTitle.extension"
+        'outtmpl': os.path.join(save_path, '%(title)s.%(ext)s'),
+        'format': 'best',           # Attempt to get the best quality available
+        'noplaylist': True,         # If URL is a playlist, only download the single video
+        'quiet': False,             # Show progress bar
+    }
+
+    try:
+        print(f"\n🔍 Scraping data from: {url}...")
+        
+        # Initialize the downloader
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            # 1. Extract Metadata (The "Scraping" part)
+            info = ydl.extract_info(url, download=False)
             
-            # Check if request was successful (Status 200)
-            if response.status_code == 200:
-                # Extract filename from URL or make one up
-                filename = f"image_{i}.jpg"
-                file_path = os.path.join(save_folder, filename)
-                
-                # 'wb' mode = Write Binary (images are binary data, not text)
-                with open(file_path, 'wb') as f:
-                    f.write(response.content)
-                print(f"Saved to {file_path}")
+            title = info.get('title', 'Unknown')
+            views = info.get('view_count', 'Unknown')
+            duration = info.get('duration', 0)
+            
+            print(f"✅ Found Video: '{title}'")
+            print(f"📊 Views: {views} | ⏳ Duration: {duration}s")
+            
+            # 2. Download
+            confirm = input("Confirm download? (y/n): ").lower()
+            if confirm == 'y':
+                print("⬇️  Downloading...")
+                ydl.download([url])
+                print("🎉 Download Complete!")
             else:
-                print("Failed to retrieve image.")
-                
-        except Exception as e:
-            print(f"Error downloading {url}: {e}")
+                print("Download cancelled.")
+
+    except Exception as e:
+        print(f"❌ Error: {e}")
 
 def main():
-    # A few test images (Placeholder images)
-    urls = [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/300",
-        "https://via.placeholder.com/450"
-    ]
+    print("--- 📺 Universal Video Downloader ---")
+    print("Supports: YouTube, TikTok, X (Twitter), Vimeo, and more.")
     
-    print(f"Found {len(urls)} images to download.")
-    download_images(urls, "downloaded_images")
+    while True:
+        url = input("\nEnter video URL (or 'q' to quit): ").strip()
+        
+        if url.lower() == 'q':
+            print("Exiting...")
+            break
+            
+        if url:
+            # Save to a specific "downloads" folder to keep repo clean
+            download_video(url, "downloads")
+        else:
+            print("Please enter a valid URL.")
 
 if __name__ == "__main__":
     main()
