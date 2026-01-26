@@ -21,7 +21,9 @@ Each folder represents a specific day's theme, containing multiple isolated scri
 | **02** | Jan 21 | **Time & State** | 1. **Smart Timer** (`timer.py`, `timer_v2.py`)<br>2. **Guessing Game** (`guessing-game.py`, `guessing-gameV2.py`)<br>3. **To-Do List** (`to-do.py`) | `time.sleep`, `sys.stdout` (carriage return), List of Dictionaries, Global State persistence. |
 | **03** | Jan 22 | **Game Logic** | 1. **Rock, Paper, Scissors** (`rsp.py`)<br>2. **Tic-Tac-Toe** (`tictactoe.py`)<br>3. **Adventure Engine** (`adventure.py`, `adventure-oop.py`) | 2D Arrays (Grids), Object-Oriented Programming (Classes/Objects), Complex Control Flow. |
 | **04** | Jan 23 | **Automation** | 1. **Video Downloader** (`video_downloader.py`)<br>2. **Bulk Renamer** (`renamer.py`)<br>3. **Auto Backup** (`backup.py`)<br>4. **PDF Merger** (`pdf_merger.py`) | File I/O, `shutil` vs `os`, Binary Modes (`wb`), `yt-dlp` & `pypdf` libraries. |
----
+| Day | Date | Theme | Projects & Files | Key Concepts |
+| :--- | :--- | :--- | :--- | :--- |
+| **05** | Jan 24 | **Web Scraping I** | 1. **News Scraper** (`news_scraper.py`)<br>2. **Book Scraper** (`book_scraper.py`)<br>3. **CSV Exporter** (`save_to_csv.py`) | `requests`, `BeautifulSoup`, HTML/CSS Selectors, CSV Writing, Data Cleaning. |
 
 ## 🚀 How to Run
 
