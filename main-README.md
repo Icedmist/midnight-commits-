@@ -29,3 +29,4 @@ Each folder represents a specific day's theme, containing multiple isolated scri
    ```bash
    git clone [https://github.com/icedmist/midnight-commits.git](https://github.com/icedmist/midnight-commits.git)
    cd midnight-commits
+....
