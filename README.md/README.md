@@ -7,7 +7,7 @@ This repository documents my **24-Day Python Sprint** (starting January 20, 2026
 
 Each folder represents a specific day's theme, containing multiple isolated scripts and mini-apps.
 
-**Current Status:** 🟢 Active (Day 3 Complete)
+**Current Status:** 🟢 Active (Day 7 Complete)
 
 ---
 
@@ -24,6 +24,8 @@ Each folder represents a specific day's theme, containing multiple isolated scri
 | Day | Date | Theme | Projects & Files | Key Concepts |
 | :--- | :--- | :--- | :--- | :--- |
 | **05** | Jan 24 | **Web Scraping I** | 1. **News Scraper** (`news_scraper.py`)<br>2. **Book Scraper** (`book_scraper.py`)<br>3. **CSV Exporter** (`save_to_csv.py`) | `requests`, `BeautifulSoup`, HTML/CSS Selectors, CSV Writing, Data Cleaning. |
+| **06** | Feb 17 | **Data Processing & Analytics** | 1. **CSV Cleaner** (`csv_cleaner.py`)<br>2. **JSON Parser** (`json_parser.py`)<br>3. **Statistics Calculator** (`stats_calculator.py`)<br>4. **Data Validator** (`data_validator.py`) | Data Cleaning, JSON Processing, Statistical Analysis, Data Validation, Error Handling. |
+| **07** | Feb 18 | **Databases & Persistence** | 1. **Contact Manager** (`contact_manager.py`)<br>2. **Note Taker** (`note_taker.py`)<br>3. **Inventory System** (`inventory_manager.py`)<br>4. **Query Builder** (`query_builder.py`) | SQLite, Database Design, CRUD Operations, Query Building, Data Relationships. |
 
 ## 🚀 How to Run
 
