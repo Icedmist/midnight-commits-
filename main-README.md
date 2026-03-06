@@ -183,3 +183,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 *Progress: 15/24 days completed (62.5%)*
 ....\n< Day 8 update -->
 \n< Day 9 update -->
+\n< Day 10 update -->
